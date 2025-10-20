@@ -1,6 +1,7 @@
 #include <stdio.h> // these are called directives and run in pre-processing before program runs
 #include <errno.h>
 #include <string.h>
+#include <stdint.h>  // needed for fixed-width integers
 #define PI 3.14 // this will happen before program
 // #include "myfile.h" will bring in a file of your choice
 // #define SQUARE(x) ((x) * (x)) can also be a function or some operation
@@ -55,6 +56,19 @@ int main(){
     printf("%d%s", myNumber, "\n" );
     printf("%.6f%s", myDecimal, "\n");
     printf("hello world");
+
+     // fixed ints
+
+    int8_t fixed_a = 100;        // 8-bit integer
+    int16_t fixed_b = 30000;     // 16-bit integer
+    int32_t fixed_c = 2000000;   // 32-bit integer
+    int64_t fixed_d = 9000000000; // 64-bit integer
+
+    // print the fixed ints
+    printf("%d\n", fixed_a);
+    printf("%d\n", fixed_b);
+    printf("%d\n", fixed_c);
+    printf("%lld\n", fixed_d); // use %lld for 64-bit
 
 
     int a = 5;
@@ -261,6 +275,10 @@ int main(){
   // COMPILING
   // if using multiple files
   // gcc main.c calc.c -o program
+
+  // fixed width ints
+  // int8_t 	8 bits (1 byte) 	-128 to 127 	%d
+  // uint8_t means unsigned (cannot be negative) ->  	0 to 255
     
 
     return 0;
